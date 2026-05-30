@@ -87,9 +87,17 @@
           </div>
         </div>
 
-        <a href="#" class="block text-xs text-[#888888] mb-6 hover:underline">
-          Forgot password?
-        </a>
+        <div class="flex justify-between items-center mb-6">
+          <label class="flex items-center gap-2 text-xs text-[#555555] cursor-pointer">
+            <input
+              type="checkbox"
+              v-model="rememberMe"
+              class="w-3.5 h-3.5 accent-[#E84569] cursor-pointer"
+            />
+            Remember me
+          </label>
+          <a href="#" class="text-xs text-[#888888] hover:underline">Forgot password?</a>
+        </div>
 
         <!-- Submit button -->
         <button
@@ -145,6 +153,7 @@ const emailFocused = ref(false)
 const passwordFocused = ref(false)
 const error = ref('')
 const showPassword = ref(false)
+const rememberMe = ref(false)
 
 const emailValid = computed(() => email.value.includes('@') && email.value.length > 3)
 const passwordValid = computed(() => password.value.length >= 1)
@@ -152,8 +161,21 @@ const formReady = computed(() => emailValid.value && passwordValid.value && !err
 
 function handleSubmit() {
   if (!emailValid.value || !passwordValid.value) return
+  if (rememberMe.value) {
+    localStorage.setItem('savedEmail', email.value)
+  } else {
+    localStorage.removeItem('savedEmail')
+  }
   error.value = 'Email or password is incorrect.'
 }
 
 watch([email, password], () => { error.value = '' })
+
+onMounted(() => {
+  const saved = localStorage.getItem('savedEmail')
+  if (saved) {
+    email.value = saved
+    rememberMe.value = true
+  }
+})
 </script>

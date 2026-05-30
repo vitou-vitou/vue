@@ -1,8 +1,12 @@
 import { mount } from '@vue/test-utils'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import LoginPage from './LoginPage.vue'
 
 describe('LoginPage', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
   it('button is disabled when fields are empty', async () => {
     const wrapper = mount(LoginPage)
     const button = wrapper.find('button[type="submit"]')
@@ -65,5 +69,13 @@ describe('LoginPage', () => {
     expect(wrapper.find('#password').attributes('type')).toBe('text')
     await wrapper.find('button[aria-label="Hide password"]').trigger('click')
     expect(wrapper.find('#password').attributes('type')).toBe('password')
+  })
+
+  it('remember me checkbox toggles', async () => {
+    const wrapper = mount(LoginPage)
+    const checkbox = wrapper.find('input[type="checkbox"]')
+    expect(checkbox.element.checked).toBe(false)
+    await checkbox.setValue(true)
+    expect(checkbox.element.checked).toBe(true)
   })
 })
