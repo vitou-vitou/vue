@@ -43,11 +43,11 @@ describe('LoginPage', () => {
     expect(wrapper.find('[role="alert"]').exists()).toBe(false)
   })
 
-  it('shows green checkmarks when both fields are valid', async () => {
+  it('shows green checkmark on valid email only', async () => {
     const wrapper = mount(LoginPage)
     await wrapper.find('#email').setValue('test@example.com')
     await wrapper.find('#password').setValue('secret')
-    expect(wrapper.findAll('.text-green-500').length).toBe(2)
+    expect(wrapper.findAll('.text-green-500').length).toBe(1)
   })
 
   it('does not enable button for invalid email format', async () => {
@@ -56,5 +56,12 @@ describe('LoginPage', () => {
     await wrapper.find('#password').setValue('secret')
     const button = wrapper.find('button[type="submit"]')
     expect(button.attributes('disabled')).toBeDefined()
+  })
+
+  it('toggles password input type when eye button clicked', async () => {
+    const wrapper = mount(LoginPage)
+    expect(wrapper.find('#password').attributes('type')).toBe('password')
+    await wrapper.find('button[aria-label="Show password"]').trigger('click')
+    expect(wrapper.find('#password').attributes('type')).toBe('text')
   })
 })

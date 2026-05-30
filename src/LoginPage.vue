@@ -63,13 +63,13 @@
             <input
               id="password"
               v-model="password"
-              type="password"
+              :type="showPassword ? 'text' : 'password'"
               placeholder="Password"
               autocomplete="current-password"
               @focus="passwordFocused = true"
               @blur="passwordFocused = false"
               :class="[
-                'w-full rounded-lg px-3 py-2.5 text-sm outline-none border transition-colors bg-white',
+                'w-full rounded-lg px-3 py-2.5 text-sm outline-none border transition-colors bg-white pr-10',
                 error
                   ? 'border-2 border-[#E84569]'
                   : passwordFocused
@@ -77,10 +77,13 @@
                     : 'border border-[#E0E0E0]'
               ]"
             />
-            <span
-              v-if="passwordValid && !error"
-              class="text-green-500 absolute right-3 top-1/2 -translate-y-1/2 text-base font-bold select-none"
-            >✓</span>
+            <button
+              type="button"
+              @click="showPassword = !showPassword"
+              :aria-label="showPassword ? 'Hide password' : 'Show password'"
+              :aria-pressed="showPassword"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-[#888888] hover:text-[#555555] select-none leading-none"
+            >{{ showPassword ? '🙈' : '👁' }}</button>
           </div>
         </div>
 
@@ -141,6 +144,7 @@ const password = ref('')
 const emailFocused = ref(false)
 const passwordFocused = ref(false)
 const error = ref('')
+const showPassword = ref(false)
 
 const emailValid = computed(() => email.value.includes('@') && email.value.length > 3)
 const passwordValid = computed(() => password.value.length >= 1)
