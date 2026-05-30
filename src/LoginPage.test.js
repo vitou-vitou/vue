@@ -63,5 +63,7 @@ describe('LoginPage', () => {
     expect(wrapper.find('#password').attributes('type')).toBe('password')
     await wrapper.find('button[aria-label="Show password"]').trigger('click')
     expect(wrapper.find('#password').attributes('type')).toBe('text')
+    await wrapper.find('button[aria-label="Hide password"]').trigger('click')
+    expect(wrapper.find('#password').attributes('type')).toBe('password')
   })
 })

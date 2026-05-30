@@ -81,7 +81,7 @@
               type="button"
               @click="showPassword = !showPassword"
               :aria-label="showPassword ? 'Hide password' : 'Show password'"
-              :aria-pressed="showPassword"
+              :aria-pressed="String(showPassword)"
               class="absolute right-3 top-1/2 -translate-y-1/2 text-[#888888] hover:text-[#555555] select-none leading-none"
             >{{ showPassword ? '🙈' : '👁' }}</button>
           </div>
@@ -137,7 +137,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 
 const email = ref('')
 const password = ref('')
