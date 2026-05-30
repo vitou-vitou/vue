@@ -173,9 +173,11 @@ watch([email, password], () => { error.value = '' })
 
 onMounted(() => {
   const saved = localStorage.getItem('savedEmail')
-  if (saved) {
+  if (saved && saved.includes('@') && saved.length > 3 && saved.length < 255) {
     email.value = saved
     rememberMe.value = true
+  } else if (saved) {
+    localStorage.removeItem('savedEmail')
   }
 })
 </script>

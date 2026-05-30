@@ -78,4 +78,32 @@ describe('LoginPage', () => {
     await checkbox.setValue(true)
     expect(checkbox.element.checked).toBe(true)
   })
+
+  it('saves email to localStorage on submit when remember me checked', async () => {
+    const wrapper = mount(LoginPage)
+    await wrapper.find('#email').setValue('test@example.com')
+    await wrapper.find('#password').setValue('secret')
+    await wrapper.find('input[type="checkbox"]').setValue(true)
+    await wrapper.find('form').trigger('submit')
+    expect(localStorage.getItem('savedEmail')).toBe('test@example.com')
+  })
+
+  it('removes email from localStorage on submit when remember me unchecked', async () => {
+    localStorage.setItem('savedEmail', 'test@example.com')
+    const wrapper = mount(LoginPage)
+    await wrapper.vm.$nextTick()
+    await wrapper.find('input[type="checkbox"]').setValue(false)
+    await wrapper.find('#email').setValue('test@example.com')
+    await wrapper.find('#password').setValue('secret')
+    await wrapper.find('form').trigger('submit')
+    expect(localStorage.getItem('savedEmail')).toBeNull()
+  })
+
+  it('pre-fills email and checks remember me when savedEmail in localStorage', async () => {
+    localStorage.setItem('savedEmail', 'saved@example.com')
+    const wrapper = mount(LoginPage)
+    await wrapper.vm.$nextTick()
+    expect(wrapper.find('#email').element.value).toBe('saved@example.com')
+    expect(wrapper.find('input[type="checkbox"]').element.checked).toBe(true)
+  })
 })
