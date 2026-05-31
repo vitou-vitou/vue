@@ -1,0 +1,97 @@
+<h2>LoginPage.vue — Enhanced Design</h2>
+<p class="subtitle">Existing login + 👁 toggle + "Remember me" + Apple Sign-In stub</p>
+
+<div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;">
+
+  <!-- Before -->
+  <div style="flex:1;min-width:220px;">
+    <div class="label" style="margin-bottom:8px;">BEFORE (current)</div>
+    <div style="background:#f0f0f0;border-radius:16px;padding:22px;font-family:sans-serif;">
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px;">
+        <div style="width:26px;height:26px;background:#E84569;border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;">🚀</div>
+        <span style="font-weight:700;font-size:12px;">4takeaway</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;margin-bottom:5px;">Nice to have you here!</div>
+      <div style="font-size:9px;color:#888;margin-bottom:14px;">Log in and discover the galactically good possibilities</div>
+      <div style="font-size:9px;font-weight:600;margin-bottom:3px;">Email</div>
+      <div style="background:white;border:1px solid #e0e0e0;border-radius:7px;padding:7px 9px;font-size:9px;color:#bbb;margin-bottom:9px;">johndoe@gmail.com</div>
+      <div style="font-size:9px;font-weight:600;margin-bottom:3px;">Password</div>
+      <div style="background:white;border:1px solid #e0e0e0;border-radius:7px;padding:7px 9px;font-size:9px;color:#bbb;margin-bottom:3px;">Password</div>
+      <div style="font-size:8px;color:#999;margin-bottom:11px;">Forgot password?</div>
+      <div style="background:#ccc;border-radius:7px;padding:8px;text-align:center;font-size:9px;font-weight:700;color:white;margin-bottom:10px;">Continue →</div>
+      <div style="text-align:center;font-size:8px;color:#999;margin-bottom:7px;">Or sign in with</div>
+      <div style="display:flex;gap:7px;justify-content:center;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #ddd;border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;">f</div>
+        <div style="background:white;border:1px solid #ddd;border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;color:#E84569;">G</div>
+      </div>
+      <div style="text-align:center;font-size:8px;color:#999;">Don't have an account? <span style="color:#E84569;font-weight:700;">Create one here!</span></div>
+    </div>
+  </div>
+
+  <!-- After -->
+  <div style="flex:1;min-width:220px;">
+    <div class="label" style="margin-bottom:8px;color:#E84569;">AFTER (enhanced) ✦ NEW</div>
+    <div style="background:#f0f0f0;border-radius:16px;padding:22px;font-family:sans-serif;border:2px solid #E84569;">
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px;">
+        <div style="width:26px;height:26px;background:#E84569;border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;">🚀</div>
+        <span style="font-weight:700;font-size:12px;">4takeaway</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;margin-bottom:5px;">Nice to have you here!</div>
+      <div style="font-size:9px;color:#888;margin-bottom:14px;">Log in and discover the galactically good possibilities</div>
+      <div style="font-size:9px;font-weight:600;margin-bottom:3px;">Email</div>
+      <div style="background:white;border:1px solid #e0e0e0;border-radius:7px;padding:7px 9px;font-size:9px;color:#bbb;margin-bottom:9px;">johndoe@gmail.com</div>
+      <div style="font-size:9px;font-weight:600;margin-bottom:3px;">Password</div>
+      <!-- Password with toggle -->
+      <div style="background:white;border:1px solid #e0e0e0;border-radius:7px;padding:7px 9px;font-size:9px;color:#bbb;margin-bottom:3px;display:flex;justify-content:space-between;align-items:center;">
+        <span>Password</span>
+        <span style="font-size:11px;cursor:pointer;color:#888;" title="toggle visibility">👁</span>
+      </div>
+      <!-- Remember me + forgot -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;">
+        <label style="font-size:8px;color:#555;display:flex;gap:4px;align-items:center;cursor:pointer;">
+          <span style="width:10px;height:10px;border:1.5px solid #E84569;border-radius:2px;display:inline-block;"></span>
+          Remember me
+        </label>
+        <span style="font-size:8px;color:#999;">Forgot password?</span>
+      </div>
+      <div style="background:#ccc;border-radius:7px;padding:8px;text-align:center;font-size:9px;font-weight:700;color:white;margin-bottom:10px;">Continue →</div>
+      <div style="text-align:center;font-size:8px;color:#999;margin-bottom:7px;">Or sign in with</div>
+      <!-- Social: Facebook + Google + Apple -->
+      <div style="display:flex;gap:7px;justify-content:center;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #ddd;border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;">f</div>
+        <div style="background:white;border:1px solid #ddd;border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;color:#E84569;">G</div>
+        <div style="background:black;border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;">🍎</div>
+      </div>
+      <div style="text-align:center;font-size:8px;color:#999;">Don't have an account? <span style="color:#E84569;font-weight:700;">Create one here!</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:24px;">
+  <h3>Changes to LoginPage.vue</h3>
+  <ul>
+    <li><strong>+</strong> <code>showPassword</code> ref — toggles input <code>type</code> between <code>"password"</code> / <code>"text"</code></li>
+    <li><strong>+</strong> <code>rememberMe</code> ref — checkbox, stored in <code>localStorage</code> on submit</li>
+    <li><strong>+</strong> Apple button — stub, same pattern as Facebook/Google (no OAuth logic)</li>
+    <li><strong>+</strong> "Remember me" / "Forgot password?" row replaces standalone "Forgot" link</li>
+    <li><strong>+</strong> 3 new tests: toggle changes input type, remember me checkbox toggles, Apple button renders</li>
+    <li>Everything else unchanged — same reactive logic, same Tailwind classes, same states</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3>Implementation approach</h3>
+  <p>Single-file change to <code>src/LoginPage.vue</code> + add 3 tests to <code>src/LoginPage.test.js</code>. No new files. Follows existing pattern.</p>
+</div>
+
+<div class="options" style="margin-top:20px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content"><h3>Approve — build this</h3><p>Proceed to spec + implementation plan</p></div>
+  </div>
+  <div class="option" data-choice="revise" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content"><h3>Revise</h3><p>Tell me what to change</p></div>
+  </div>
+</div>

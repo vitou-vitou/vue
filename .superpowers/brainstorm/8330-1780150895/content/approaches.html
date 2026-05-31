@@ -1,0 +1,40 @@
+<h2>Login Page — Architecture Approaches</h2>
+<p class="subtitle">Vue 3 + Tailwind CSS · English · Full Vite project · 4 UI states</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Single-component reactive (Recommended)</h3>
+      <p>One <code>LoginPage.vue</code> — reactive <code>ref()</code> fields, computed CSS classes drive all 4 states (default, active, error, success). Inline validation on submit. No extra files.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Simple — holds in one file</li><li>Easy to understand &amp; modify</li><li>No over-abstraction for a login page</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Logic &amp; template mixed if page grows</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Composable-driven</h3>
+      <p><code>useLoginForm.ts</code> owns all state + validation logic. <code>LoginPage.vue</code> is purely presentational — binds to composable outputs.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Clean separation: logic vs. UI</li><li>Composable is unit-testable in isolation</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Extra file for a single-page form</li><li>Slight overkill unless reusing logic</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Component split (InputField + LoginPage)</h3>
+      <p>Reusable <code>InputField.vue</code> component handles its own state display (error/success icons, border color). <code>LoginPage.vue</code> orchestrates. Matches how real design systems work.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>InputField reusable across project</li><li>Clean prop interface: <code>:error :valid</code></li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>2 component files instead of 1</li><li>More setup for a demo page</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>

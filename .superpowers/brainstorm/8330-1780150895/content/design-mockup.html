@@ -1,0 +1,151 @@
+<h2>Login Page Design</h2>
+<p class="subtitle">4takeaway · Vue 3 + Tailwind · Single component · 4 states</p>
+
+<div class="section">
+  <h3>Visual Mockup — All 4 States</h3>
+  <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">
+
+    <!-- State 1: Default -->
+    <div style="flex:1;min-width:200px;">
+      <div class="label">1 · Default (empty)</div>
+      <div style="background:#f0f0f0;border-radius:16px;padding:24px;margin-top:8px;font-family:sans-serif;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <div style="width:28px;height:28px;background:#E84569;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;">🚀</div>
+          <span style="font-weight:700;font-size:13px;">4takeaway</span>
+        </div>
+        <div style="font-size:18px;font-weight:800;margin-bottom:6px;">Nice to have<br>you here!</div>
+        <div style="font-size:10px;color:#888;margin-bottom:16px;">Log in and discover the galactically good possibilities</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Email</div>
+        <div style="background:white;border-radius:8px;padding:8px 10px;font-size:11px;color:#bbb;margin-bottom:10px;">johndoe@gmail.com</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Password</div>
+        <div style="background:white;border-radius:8px;padding:8px 10px;font-size:11px;color:#bbb;margin-bottom:4px;">Password</div>
+        <div style="font-size:9px;color:#999;margin-bottom:12px;">Forgot password?</div>
+        <div style="background:#ccc;border-radius:8px;padding:9px;text-align:center;font-size:11px;font-weight:700;color:white;margin-bottom:12px;">Continue →</div>
+        <div style="text-align:center;font-size:9px;color:#999;margin-bottom:8px;">Or sign in with</div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px;">
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;">f</div>
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#E84569;">G</div>
+        </div>
+        <div style="text-align:center;font-size:9px;color:#999;">Don't have an account? <span style="color:#E84569;font-weight:700;">Create one here!</span></div>
+      </div>
+    </div>
+
+    <!-- State 2: Active/Filled -->
+    <div style="flex:1;min-width:200px;">
+      <div class="label">2 · Filled (active)</div>
+      <div style="background:#f0f0f0;border-radius:16px;padding:24px;margin-top:8px;font-family:sans-serif;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <div style="width:28px;height:28px;background:#E84569;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;">🚀</div>
+          <span style="font-weight:700;font-size:13px;">4takeaway</span>
+        </div>
+        <div style="font-size:18px;font-weight:800;margin-bottom:6px;">Nice to have<br>you here!</div>
+        <div style="font-size:10px;color:#888;margin-bottom:16px;">Log in and discover the galactically good possibilities</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Email</div>
+        <div style="background:white;border:2px solid #E84569;border-radius:8px;padding:8px 10px;font-size:11px;color:#333;margin-bottom:10px;">j4hndue@gmail.com</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Password</div>
+        <div style="background:white;border:2px solid #E84569;border-radius:8px;padding:8px 10px;font-size:11px;color:#333;margin-bottom:4px;">••••••••••••••</div>
+        <div style="font-size:9px;color:#999;margin-bottom:12px;">Forgot password?</div>
+        <div style="background:#E84569;border-radius:8px;padding:9px;text-align:center;font-size:11px;font-weight:700;color:white;margin-bottom:12px;">Continue →</div>
+        <div style="text-align:center;font-size:9px;color:#999;margin-bottom:8px;">Or sign in with</div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px;">
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;">f</div>
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#E84569;">G</div>
+        </div>
+        <div style="text-align:center;font-size:9px;color:#999;">Don't have an account? <span style="color:#E84569;font-weight:700;">Create one here!</span></div>
+      </div>
+    </div>
+
+    <!-- State 3: Error -->
+    <div style="flex:1;min-width:200px;">
+      <div class="label">3 · Error</div>
+      <div style="background:#f0f0f0;border-radius:16px;padding:24px;margin-top:8px;font-family:sans-serif;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <div style="width:28px;height:28px;background:#E84569;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;">🚀</div>
+          <span style="font-weight:700;font-size:13px;">4takeaway</span>
+        </div>
+        <div style="font-size:18px;font-weight:800;margin-bottom:6px;">Nice to have<br>you here!</div>
+        <div style="font-size:10px;color:#888;margin-bottom:16px;">Log in and discover the galactically good possibilities</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Email</div>
+        <div style="background:white;border:2px solid #E84569;border-radius:8px;padding:8px 10px;font-size:11px;color:#333;margin-bottom:3px;">j4hndue@gmail.com</div>
+        <div style="font-size:9px;color:#E84569;margin-bottom:8px;">Email or password is incorrect.</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Password</div>
+        <div style="background:white;border:2px solid #E84569;border-radius:8px;padding:8px 10px;font-size:11px;color:#333;margin-bottom:4px;">••••••••••••••</div>
+        <div style="font-size:9px;color:#999;margin-bottom:12px;">Forgot password?</div>
+        <div style="background:#ccc;border-radius:8px;padding:9px;text-align:center;font-size:11px;font-weight:700;color:white;margin-bottom:12px;">Continue →</div>
+        <div style="text-align:center;font-size:9px;color:#999;margin-bottom:8px;">Or sign in with</div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px;">
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;">f</div>
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#E84569;">G</div>
+        </div>
+        <div style="text-align:center;font-size:9px;color:#999;">Don't have an account? <span style="color:#E84569;font-weight:700;">Create one here!</span></div>
+      </div>
+    </div>
+
+    <!-- State 4: Success -->
+    <div style="flex:1;min-width:200px;">
+      <div class="label">4 · Valid (success)</div>
+      <div style="background:#f0f0f0;border-radius:16px;padding:24px;margin-top:8px;font-family:sans-serif;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+          <div style="width:28px;height:28px;background:#E84569;border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;">🚀</div>
+          <span style="font-weight:700;font-size:13px;">4takeaway</span>
+        </div>
+        <div style="font-size:18px;font-weight:800;margin-bottom:6px;">Nice to have<br>you here!</div>
+        <div style="font-size:10px;color:#888;margin-bottom:16px;">Log in and discover the galactically good possibilities</div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Email</div>
+        <div style="background:white;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;font-size:11px;color:#333;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;">
+          <span>johndoe@gmail.com</span><span style="color:#22c55e;font-size:14px;">✓</span>
+        </div>
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Password</div>
+        <div style="background:white;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;font-size:11px;color:#333;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;">
+          <span>••••••••••••••</span><span style="color:#22c55e;font-size:14px;">✓</span>
+        </div>
+        <div style="font-size:9px;color:#999;margin-bottom:12px;">Forgot password?</div>
+        <div style="background:#E84569;border-radius:8px;padding:9px;text-align:center;font-size:11px;font-weight:700;color:white;margin-bottom:12px;">Continue →</div>
+        <div style="text-align:center;font-size:9px;color:#999;margin-bottom:8px;">Or sign in with</div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px;">
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;">f</div>
+          <div style="background:white;border:1px solid #ddd;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#E84569;">G</div>
+        </div>
+        <div style="text-align:center;font-size:9px;color:#999;">Don't have an account? <span style="color:#E84569;font-weight:700;">Create one here!</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h3>Project Structure</h3>
+  <pre style="background:#1e1e1e;color:#d4d4d4;padding:16px;border-radius:8px;font-size:12px;line-height:1.6;">p2/
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+└── src/
+    ├── main.js
+    ├── App.vue
+    └── LoginPage.vue   ← all state logic here</pre>
+</div>
+
+<div class="section">
+  <h3>State Logic (LoginPage.vue)</h3>
+  <ul>
+    <li><strong>email</strong> / <strong>password</strong> — <code>ref('')</code></li>
+    <li><strong>error</strong> — <code>ref('')</code> — set on failed submit</li>
+    <li><strong>emailValid / passwordValid</strong> — <code>computed</code> — drives green ✓ icons</li>
+    <li><strong>formReady</strong> — <code>computed</code> — enables pink button</li>
+    <li>Focus state → pink border via <code>@focus/@blur</code> on inputs</li>
+    <li>Submit → clears error, validates, sets error if invalid</li>
+  </ul>
+</div>
+
+<div class="options" style="margin-top:24px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content"><h3>Approve design</h3><p>Looks good — proceed to spec &amp; implementation plan</p></div>
+  </div>
+  <div class="option" data-choice="revise" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content"><h3>Request changes</h3><p>Tell me what to adjust</p></div>
+  </div>
+</div>

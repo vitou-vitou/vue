@@ -1,0 +1,134 @@
+<h2>Most Popular Login UI Patterns — Applied to 4takeaway</h2>
+<p class="subtitle">Pick a direction for the next design</p>
+
+<div class="cards">
+
+  <!-- Pattern A: Enhanced Card (current + trending additions) -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f0f0f0;border-radius:12px;padding:20px;font-family:sans-serif;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;">
+          <div style="width:22px;height:22px;background:#E84569;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-size:10px;">🚀</div>
+          <span style="font-weight:700;font-size:11px;">4takeaway</span>
+        </div>
+        <div style="font-size:14px;font-weight:800;margin-bottom:4px;">Nice to have you here!</div>
+        <div style="font-size:9px;color:#888;margin-bottom:12px;">Log in and discover the possibilities</div>
+        <!-- Email -->
+        <div style="font-size:9px;font-weight:600;margin-bottom:3px;">Email</div>
+        <div style="background:white;border:1px solid #e0e0e0;border-radius:6px;padding:6px 8px;font-size:9px;color:#333;margin-bottom:8px;">johndoe@gmail.com</div>
+        <!-- Password with toggle -->
+        <div style="font-size:9px;font-weight:600;margin-bottom:3px;">Password</div>
+        <div style="background:white;border:1px solid #e0e0e0;border-radius:6px;padding:6px 8px;font-size:9px;color:#333;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;">
+          <span>••••••••</span><span style="font-size:10px;color:#888;">👁</span>
+        </div>
+        <!-- Remember me + forgot -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <label style="font-size:8px;color:#555;display:flex;gap:4px;align-items:center;"><input type="checkbox" style="width:10px;height:10px;accent-color:#E84569;"> Remember me</label>
+          <span style="font-size:8px;color:#888;">Forgot password?</span>
+        </div>
+        <div style="background:#E84569;border-radius:6px;padding:7px;text-align:center;font-size:9px;font-weight:700;color:white;margin-bottom:8px;">Continue →</div>
+        <div style="text-align:center;font-size:8px;color:#999;margin-bottom:6px;">Or sign in with</div>
+        <div style="display:flex;gap:6px;justify-content:center;">
+          <div style="background:white;border:1px solid #ddd;border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;">f</div>
+          <div style="background:white;border:1px solid #ddd;border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;color:#E84569;">G</div>
+          <div style="background:white;border:1px solid #ddd;border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;">🍎</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A · Enhanced Card <span style="background:#E84569;color:white;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:6px;">#1 most downloaded</span></h3>
+      <p>Current design + password toggle 👁, "Remember me" checkbox, Apple Sign-In. Minimal change, maximum UX gain.</p>
+    </div>
+  </div>
+
+  <!-- Pattern B: Progressive (email first → password second) -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f0f0f0;border-radius:12px;padding:20px;font-family:sans-serif;display:flex;gap:8px;">
+        <!-- Step 1 -->
+        <div style="flex:1;background:white;border-radius:8px;padding:12px;">
+          <div style="width:20px;height:20px;background:#E84569;border-radius:5px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:9px;">🚀</div>
+          <div style="font-size:10px;font-weight:800;margin-bottom:3px;">Welcome back!</div>
+          <div style="font-size:7px;color:#888;margin-bottom:8px;">Enter your email to continue</div>
+          <div style="font-size:7px;font-weight:600;margin-bottom:2px;">Email</div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:5px 6px;font-size:7px;color:#333;margin-bottom:8px;">johndoe@gmail.com</div>
+          <div style="background:#E84569;border-radius:5px;padding:5px;text-align:center;font-size:7px;font-weight:700;color:white;">Continue →</div>
+          <div style="display:flex;align-items:center;gap:4px;margin:6px 0;">
+            <div style="flex:1;height:1px;background:#eee;"></div>
+            <span style="font-size:6px;color:#999;">or</span>
+            <div style="flex:1;height:1px;background:#eee;"></div>
+          </div>
+          <div style="background:#f5f5f5;border-radius:5px;padding:5px;text-align:center;font-size:7px;font-weight:600;">🍎 Continue with Apple</div>
+        </div>
+        <!-- Step 2 -->
+        <div style="flex:1;background:white;border-radius:8px;padding:12px;border:2px dashed #E84569;">
+          <div style="font-size:7px;color:#E84569;margin-bottom:4px;font-weight:600;">← johndoe@gmail.com</div>
+          <div style="font-size:10px;font-weight:800;margin-bottom:3px;">Enter password</div>
+          <div style="font-size:7px;color:#888;margin-bottom:8px;">Step 2 of 2</div>
+          <div style="font-size:7px;font-weight:600;margin-bottom:2px;">Password</div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:5px 6px;font-size:7px;color:#333;margin-bottom:4px;display:flex;justify-content:space-between;">
+            <span>••••••••</span><span>👁</span>
+          </div>
+          <div style="font-size:6px;color:#888;margin-bottom:8px;text-align:right;">Forgot password?</div>
+          <div style="background:#E84569;border-radius:5px;padding:5px;text-align:center;font-size:7px;font-weight:700;color:white;">Sign in →</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B · Progressive / Multi-step <span style="background:#555;color:white;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:6px;">trending 2025</span></h3>
+      <p>Email screen → password screen. Used by Airbnb, Notion, Figma. Reduces friction, enables SSO routing per domain.</p>
+    </div>
+  </div>
+
+  <!-- Pattern C: Social-first -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f0f0f0;border-radius:12px;padding:20px;font-family:sans-serif;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;">
+          <div style="width:22px;height:22px;background:#E84569;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-size:10px;">🚀</div>
+          <span style="font-weight:700;font-size:11px;">4takeaway</span>
+        </div>
+        <div style="font-size:14px;font-weight:800;margin-bottom:4px;">Nice to have you here!</div>
+        <div style="font-size:9px;color:#888;margin-bottom:14px;">Log in and discover the possibilities</div>
+        <!-- Social buttons FIRST + prominent -->
+        <div style="background:#1877F2;border-radius:6px;padding:7px;display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+          <span style="color:white;font-weight:700;font-size:10px;">f</span>
+          <span style="color:white;font-size:8px;font-weight:600;flex:1;text-align:center;">Continue with Facebook</span>
+        </div>
+        <div style="background:white;border:1px solid #ddd;border-radius:6px;padding:7px;display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+          <span style="color:#E84569;font-weight:700;font-size:10px;">G</span>
+          <span style="font-size:8px;font-weight:600;flex:1;text-align:center;">Continue with Google</span>
+        </div>
+        <div style="background:black;border-radius:6px;padding:7px;display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+          <span style="color:white;font-size:10px;">🍎</span>
+          <span style="color:white;font-size:8px;font-weight:600;flex:1;text-align:center;">Continue with Apple</span>
+        </div>
+        <!-- Divider then email -->
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+          <div style="flex:1;height:1px;background:#e0e0e0;"></div>
+          <span style="font-size:8px;color:#999;">or use email</span>
+          <div style="flex:1;height:1px;background:#e0e0e0;"></div>
+        </div>
+        <div style="background:white;border:1px solid #e0e0e0;border-radius:6px;padding:6px 8px;font-size:9px;color:#bbb;margin-bottom:6px;">Email address</div>
+        <div style="background:#E84569;border-radius:6px;padding:7px;text-align:center;font-size:9px;font-weight:700;color:white;">Continue with Email →</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C · Social-first <span style="background:#22c55e;color:white;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:6px;">highest conversion</span></h3>
+      <p>SSO buttons prominent at top, email as fallback below. Used by Spotify, Airbnb, Medium. Reduces password friction, 40% higher conversion.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:24px;">
+  <h3>Common upgrades across all patterns</h3>
+  <ul>
+    <li>👁 <strong>Password visibility toggle</strong> — #1 usability improvement per Baymard research</li>
+    <li>✅ <strong>"Remember me"</strong> — reduces returning user friction</li>
+    <li>🍎 <strong>Apple Sign-In</strong> — required on iOS apps if any social login present</li>
+    <li>📱 <strong>inputmode="email"</strong> — triggers correct keyboard on mobile</li>
+    <li>⚠️ <strong>Inline field errors</strong> — below field, not top of form</li>
+    <li>↩️ <strong>Auto-focus first field</strong> on load</li>
+  </ul>
+</div>
