@@ -107,6 +107,13 @@ describe('LoginPage', () => {
     expect(wrapper.find('input[type="checkbox"]').element.checked).toBe(true)
   })
 
+  it('clears malformed savedEmail on mount', async () => {
+    localStorage.setItem('savedEmail', 'notanemail')
+    mount(LoginPage)
+    await new Promise(r => setTimeout(r, 0))
+    expect(localStorage.getItem('savedEmail')).toBeNull()
+  })
+
   it('renders Apple sign-in button', () => {
     const wrapper = mount(LoginPage)
     const appleBtn = wrapper.find('button[aria-label="Sign in with Apple"]')

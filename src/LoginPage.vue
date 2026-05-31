@@ -166,6 +166,7 @@ const formReady = computed(() => emailValid.value && passwordValid.value && !err
 
 function handleSubmit() {
   if (!emailValid.value || !passwordValid.value) return
+  // TODO: move localStorage write to success branch when real auth API is wired in
   if (rememberMe.value) {
     localStorage.setItem('savedEmail', email.value)
   } else {
