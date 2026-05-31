@@ -134,11 +134,9 @@
         </button>
         <button
           type="button"
-          class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm hover:bg-gray-900 transition-colors"
+          class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white text-sm font-bold hover:bg-gray-900 transition-colors"
           aria-label="Sign in with Apple"
-        >
-
-        </button>
+        >🍎</button>
       </div>
 
       <!-- Sign up link -->

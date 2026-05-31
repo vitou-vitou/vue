@@ -109,6 +109,8 @@ describe('LoginPage', () => {
 
   it('renders Apple sign-in button', () => {
     const wrapper = mount(LoginPage)
-    expect(wrapper.find('button[aria-label="Sign in with Apple"]').exists()).toBe(true)
+    const appleBtn = wrapper.find('button[aria-label="Sign in with Apple"]')
+    expect(appleBtn.exists()).toBe(true)
+    expect(appleBtn.isVisible()).toBe(true)
   })
 })
