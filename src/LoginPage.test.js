@@ -106,4 +106,9 @@ describe('LoginPage', () => {
     expect(wrapper.find('#email').element.value).toBe('saved@example.com')
     expect(wrapper.find('input[type="checkbox"]').element.checked).toBe(true)
   })
+
+  it('renders Apple sign-in button', () => {
+    const wrapper = mount(LoginPage)
+    expect(wrapper.find('button[aria-label="Sign in with Apple"]').exists()).toBe(true)
+  })
 })
